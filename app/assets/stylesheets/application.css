@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #d8e7fb 0%, #edf4fd 35%, #f7f9fb 100%);
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #111a2e 0%, #1e3a5f 55%, #0b6bcb 100%);
+  box-shadow: 0 10px 30px rgba(17, 26, 46, 0.18);
+  padding-inline: 32px;
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  margin-right: 40px;
+}
+
+.app-brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 18px;
+}
+
+.app-content {
+  padding: 32px 24px 48px;
+  max-width: 1080px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page-hero {
+  margin-bottom: 24px;
+}
+
+.page-hero-title {
+  margin: 0 0 8px !important;
+  color: #111a2e !important;
+  letter-spacing: -0.03em;
+}
+
+.page-hero-subtitle {
+  margin: 0 !important;
+  color: #63738a !important;
+  font-size: 16px;
+}
+
+.surface-card {
+  border: 1px solid rgba(146, 160, 181, 0.18);
+  box-shadow: 0 10px 30px rgba(17, 26, 46, 0.06);
+}
+
+.search-card .ant-select-selector {
+  min-height: 48px !important;
+  border-radius: 12px !important;
+  padding-inline: 12px !important;
+}
+
+.loading-panel {
+  margin-top: 32px;
+  padding: 48px 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px dashed rgba(146, 160, 181, 0.35);
+  border-radius: 16px;
+}
+
+.weather-icon {
+  width: 72px;
+  height: 72px;
+}
+
+.forecast-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.stat-tile {
+  background: linear-gradient(180deg, #f7f9fb 0%, #eef3f7 100%);
+  border: 1px solid rgba(146, 160, 181, 0.18);
+  border-radius: 14px;
+  padding: 16px;
+  height: 100%;
+}
+
+.stat-label {
+  display: block;
+  color: #63738a;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  display: block;
+  color: #111a2e;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.current-temp {
+  margin: 0 !important;
+  font-size: 56px !important;
+  line-height: 1 !important;
+  letter-spacing: -0.04em;
+  color: #111a2e !important;
+}
+
+.results-section {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.forecast-row-even td {
+  background: #f7f9fb !important;
+}
+
+.forecast-row-odd td {
+  background: #ffffff !important;
+}
+
+.results-grid {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+}
+
+.results-grid .full-width {
+  grid-column: 1 / -1;
+}

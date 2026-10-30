@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+if [ "${1}" = "./bin/rails" ] && [ "${2}" = "server" ]; then
+  ./bin/rails db:prepare
+
+  if [ -f package.json ]; then
+    npm install --silent
+    npm run build
+    npm run build:watch &
+  fi
+fi
+
+exec "${@}"
