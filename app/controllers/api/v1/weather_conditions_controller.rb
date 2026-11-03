@@ -41,7 +41,7 @@ module Api
 
         if coordinates.blank?
           render json: { error: 'latitude and longitude are required' }, status: :bad_request
-          return true
+          true
         end
       end
     end
