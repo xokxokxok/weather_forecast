@@ -2,39 +2,27 @@ module Api
   module V1
     class WeatherConditionsController < ::Api::ApplicationController
       def index
-        zip_code_and_coordinates_present?
+        return if zip_code_or_coordinates_blank?
 
-        forecast = weather_api.forecast_days(**coordinates, zip_code:)
+        forecast = Google::WeatherApi.forecast_days(**coordinates, zip_code:, nearby_zip_codes:)
         render json: forecast
-      rescue Google::WeatherClient::Error => e
-        render json: { error: e.message }, status: :unprocessable_entity
       end
 
       def show
-        zip_code_and_coordinates_present?
+        return if zip_code_or_coordinates_blank?
 
-        current = weather_api.current_conditions(**coordinates, zip_code:)
+        current = Google::WeatherApi.current_conditions(**coordinates, zip_code:, nearby_zip_codes:)
         render json: current
-      rescue Google::WeatherClient::Error => e
-        render json: { error: e.message }, status: :unprocessable_entity
       end
 
       private
 
-      def weather_api
-        @weather_api ||= Google::WeatherApi.new
+      def zip_code
+        params[:zip_code].presence
       end
 
-      def zip_code_and_coordinates_present?
-        if zip_code.blank?
-          render json: { error: "zip_code is required" }, status: :bad_request
-          return
-        end
-
-        if coordinates.blank?
-          render json: { error: "latitude and longitude are required" }, status: :bad_request
-          return
-        end
+      def nearby_zip_codes
+        params[:nearby_zip_codes].presence
       end
 
       def coordinates
@@ -45,8 +33,16 @@ module Api
         { latitude: latitude.to_f, longitude: longitude.to_f }
       end
 
-      def zip_code
-        params[:zip_code]
+      def zip_code_or_coordinates_blank?
+        if zip_code.blank?
+          render json: { error: 'at least one of zip_code or nearby_zip_codes is required' }, status: :bad_request
+          return true
+        end
+
+        if coordinates.blank?
+          render json: { error: 'latitude and longitude are required' }, status: :bad_request
+          return true
+        end
       end
     end
   end

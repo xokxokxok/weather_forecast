@@ -36,3 +36,12 @@
 
 # Ignore IDE files.
 /.idea/
+
+# RBS signatures downloaded by RubyMine (gem RBS collection)
+/.gem_rbs_collection/
+
+# RubyMine RBS collection files written to the project root with a Windows path as file name
+/C:*rbs_collection*.yaml
+
+# Local instructions for AI coding agents
+/AGENTS.md

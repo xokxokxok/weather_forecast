@@ -1,0 +1,111 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://places.googleapis.com/v1/places/ChIJ7xfS-zW8woARXNkAJzX5Hs8?session_token=spec-session-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.15.1
+      X-Goog-Fieldmask:
+      - id,displayName,formattedAddress,addressComponents,location,shortFormattedAddress,types
+      X-Goog-Api-Key:
+      - "<GOOGLE_PLACE_API_KEY>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Vary:
+      - "*"
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 03 Nov 2026 02:15:59 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Server-Timing:
+      - gfet4t7; dur=760
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "ChIJ7xfS-zW8woARXNkAJzX5Hs8",
+          "types": [
+            "postal_code"
+          ],
+          "formattedAddress": "Beverly Hills, CA 90210, USA",
+          "addressComponents": [
+            {
+              "longText": "90210",
+              "shortText": "90210",
+              "types": [
+                "postal_code"
+              ],
+              "languageCode": "en-US"
+            },
+            {
+              "longText": "Beverly Hills",
+              "shortText": "Beverly Hills",
+              "types": [
+                "locality",
+                "political"
+              ],
+              "languageCode": "en"
+            },
+            {
+              "longText": "Los Angeles County",
+              "shortText": "Los Angeles County",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ],
+              "languageCode": "en"
+            },
+            {
+              "longText": "California",
+              "shortText": "CA",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ],
+              "languageCode": "en"
+            },
+            {
+              "longText": "United States",
+              "shortText": "US",
+              "types": [
+                "country",
+                "political"
+              ],
+              "languageCode": "en"
+            }
+          ],
+          "location": {
+            "latitude": 34.103003199999996,
+            "longitude": -118.4104684
+          },
+          "displayName": {
+            "text": "90210",
+            "languageCode": "en-US"
+          },
+          "shortFormattedAddress": "Beverly Hills"
+        }
+  recorded_at: Tue, 03 Nov 2026 02:15:59 GMT
+recorded_with: VCR 6.4.1

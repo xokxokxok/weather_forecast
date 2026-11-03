@@ -1,0 +1,146 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://weather.googleapis.com/v1/currentConditions:lookup?location.latitude=41.8857&location.longitude=-87.6181
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.15.1
+      X-Goog-Api-Key:
+      - "<GOOGLE_PLACE_API_KEY>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 02 Nov 2026 22:48:33 GMT
+      Server:
+      - ESF
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Server-Timing:
+      - gfet4t7; dur=826
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "timeZone": {
+            "id": "America/Chicago",
+            "version": ""
+          },
+          "weatherCondition": {
+            "iconBaseUri": "https://maps.gstatic.com/weather/v1/cloudy",
+            "description": {
+              "text": "Cloudy",
+              "languageCode": "en"
+            },
+            "type": "CLOUDY"
+          },
+          "temperature": {
+            "unit": "CELSIUS",
+            "degrees": 15.8
+          },
+          "feelsLikeTemperature": {
+            "unit": "CELSIUS",
+            "degrees": 15
+          },
+          "dewPoint": {
+            "unit": "CELSIUS",
+            "degrees": 13.5
+          },
+          "heatIndex": {
+            "unit": "CELSIUS",
+            "degrees": 15.8
+          },
+          "windChill": {
+            "unit": "CELSIUS",
+            "degrees": 15
+          },
+          "precipitation": {
+            "probability": {
+              "type": "RAIN",
+              "percent": 10
+            },
+            "snowQpf": {
+              "unit": "MILLIMETERS",
+              "quantity": 0
+            },
+            "qpf": {
+              "unit": "MILLIMETERS",
+              "quantity": 0
+            }
+          },
+          "airPressure": {
+            "meanSeaLevelMillibars": 1016.24
+          },
+          "wind": {
+            "direction": {
+              "cardinal": "SOUTH_SOUTHEAST",
+              "degrees": 160
+            },
+            "speed": {
+              "unit": "KILOMETERS_PER_HOUR",
+              "value": 19
+            },
+            "gust": {
+              "unit": "KILOMETERS_PER_HOUR",
+              "value": 28
+            }
+          },
+          "visibility": {
+            "unit": "KILOMETERS",
+            "distance": 16
+          },
+          "currentConditionsHistory": {
+            "temperatureChange": {
+              "unit": "CELSIUS",
+              "degrees": 0.9
+            },
+            "maxTemperature": {
+              "unit": "CELSIUS",
+              "degrees": 16.2
+            },
+            "minTemperature": {
+              "unit": "CELSIUS",
+              "degrees": 13.6
+            },
+            "snowQpf": {
+              "unit": "MILLIMETERS",
+              "quantity": 0
+            },
+            "qpf": {
+              "unit": "MILLIMETERS",
+              "quantity": 0.27
+            }
+          },
+          "currentTime": "2026-11-02T22:48:33.317175493Z",
+          "isDaytime": false,
+          "relativeHumidity": 86,
+          "uvIndex": 0,
+          "thunderstormProbability": 0,
+          "cloudCover": 99
+        }
+  recorded_at: Mon, 02 Nov 2026 22:48:33 GMT
+recorded_with: VCR 6.4.1

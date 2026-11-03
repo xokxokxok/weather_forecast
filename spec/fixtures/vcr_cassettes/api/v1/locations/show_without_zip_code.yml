@@ -1,0 +1,271 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://places.googleapis.com/v1/places/Eh9Tb3V0aHdhcmsgUGFyayBSb2FkLCBMb25kb24sIFVLIi4qLAoUChIJN3JXaz4DdkgR9pWg552-yEsSFAoSCfPzF7dbG3ZIEQqyADl5LpFJ?session_token=spec-session-token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.15.1
+      X-Goog-Fieldmask:
+      - id,displayName,formattedAddress,addressComponents,location,shortFormattedAddress,types
+      X-Goog-Api-Key:
+      - "<GOOGLE_PLACE_API_KEY>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Vary:
+      - "*"
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 03 Nov 2026 02:16:00 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Server-Timing:
+      - gfet4t7; dur=798
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "id": "EiNTb3V0aHdhcmsgUGFyayBSZC4sIExvbmRvbiBTRTE2LCBVSyIuKiwKFAoSCTdyV2s-A3ZIEfaVoOedvshLEhQKEgnz8xe3Wxt2SBEKsgA5eS6RSQ",
+          "types": [
+            "route"
+          ],
+          "formattedAddress": "Southwark Park Rd., London, UK",
+          "addressComponents": [
+            {
+              "longText": "Southwark Park Road",
+              "shortText": "Southwark Park Rd.",
+              "types": [
+                "route"
+              ],
+              "languageCode": "en"
+            },
+            {
+              "longText": "London",
+              "shortText": "London",
+              "types": [
+                "postal_town"
+              ],
+              "languageCode": "en"
+            },
+            {
+              "longText": "Greater London",
+              "shortText": "Greater London",
+              "types": [
+                "administrative_area_level_2",
+                "political"
+              ],
+              "languageCode": "en"
+            },
+            {
+              "longText": "England",
+              "shortText": "England",
+              "types": [
+                "administrative_area_level_1",
+                "political"
+              ],
+              "languageCode": "en"
+            },
+            {
+              "longText": "United Kingdom",
+              "shortText": "GB",
+              "types": [
+                "country",
+                "political"
+              ],
+              "languageCode": "en"
+            }
+          ],
+          "location": {
+            "latitude": 51.4924334,
+            "longitude": -0.0670667
+          },
+          "displayName": {
+            "text": "Southwark Park Road",
+            "languageCode": "en"
+          },
+          "shortFormattedAddress": "Southwark Park Rd., London"
+        }
+  recorded_at: Tue, 03 Nov 2026 02:16:00 GMT
+- request:
+    method: get
+    uri: https://geocode.googleapis.com/v4/geocode/location?location.latitude=51.4924334&location.longitude=-0.0670667&types=postal_code
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.15.1
+      X-Goog-Fieldmask:
+      - results.addressComponents,results.location
+      X-Goog-Api-Key:
+      - "<GOOGLE_PLACE_API_KEY>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 03 Nov 2026 02:16:01 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Server-Timing:
+      - gfet4t7; dur=788
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "results": [
+            {
+              "location": {
+                "latitude": 51.492483899999996,
+                "longitude": -0.065945
+              },
+              "addressComponents": [
+                {
+                  "longText": "SE16 3TX",
+                  "shortText": "SE16 3TX",
+                  "types": [
+                    "postal_code"
+                  ]
+                },
+                {
+                  "longText": "Southwark Park Road",
+                  "shortText": "Southwark Park Rd.",
+                  "types": [
+                    "route"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "London",
+                  "shortText": "London",
+                  "types": [
+                    "postal_town"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "Greater London",
+                  "shortText": "Greater London",
+                  "types": [
+                    "administrative_area_level_2",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "England",
+                  "shortText": "England",
+                  "types": [
+                    "administrative_area_level_1",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "United Kingdom",
+                  "shortText": "GB",
+                  "types": [
+                    "country",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                }
+              ]
+            },
+            {
+              "location": {
+                "latitude": 51.4966022,
+                "longitude": -0.0498457
+              },
+              "addressComponents": [
+                {
+                  "longText": "SE16",
+                  "shortText": "SE16",
+                  "types": [
+                    "postal_code",
+                    "postal_code_prefix"
+                  ]
+                },
+                {
+                  "longText": "London",
+                  "shortText": "London",
+                  "types": [
+                    "postal_town"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "Greater London",
+                  "shortText": "Greater London",
+                  "types": [
+                    "administrative_area_level_2",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "England",
+                  "shortText": "England",
+                  "types": [
+                    "administrative_area_level_1",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "United Kingdom",
+                  "shortText": "GB",
+                  "types": [
+                    "country",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                }
+              ]
+            }
+          ]
+        }
+  recorded_at: Tue, 03 Nov 2026 02:16:01 GMT
+recorded_with: VCR 6.4.1

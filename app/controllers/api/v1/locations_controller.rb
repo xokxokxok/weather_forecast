@@ -2,12 +2,7 @@ module Api
   module V1
     class LocationsController < ::Api::ApplicationController
       def index
-        response = place_api.autocomplete_address(input, session_token:)
-        options = build_options(response)
-
-        render json: { session_token:, options: }
-      rescue Google::PlaceClient::Error, Google::PlaceApi::Error => e
-        render json: { error: e.message }, status: :unprocessable_entity
+        render json: Google::PlaceApi.autocomplete_address(input, session_token:)
       end
 
       def show
@@ -16,17 +11,21 @@ module Api
           return
         end
 
-        details = place_api.place_details(place_id, session_token:)
+        details = Google::PlaceApi.place_details(place_id, session_token:)
+
+        if details[:zip_code].blank?
+          details[:nearby_zip_codes] = Google::GeocodingApi.nearby_zip_codes(
+            details[:address],
+            latitude: details[:location][:latitude],
+            longitude: details[:location][:longitude]
+          )
+          details[:zip_code] = details[:nearby_zip_codes].shift
+        end
+
         render json: details
-      rescue Google::PlaceClient::Error, Google::PlaceApi::Error => e
-        render json: { error: e.message }, status: :unprocessable_entity
       end
 
       private
-
-      def place_api
-        @place_api ||= Google::PlaceApi.new
-      end
 
       def input
         @input ||= query_params[:input]
@@ -38,18 +37,6 @@ module Api
 
       def session_token
         @session_token ||= query_params[:session_token]
-      end
-
-      def build_options(response)
-        Array(response[:suggestions]).filter_map do |suggestion|
-          prediction = suggestion[:place_prediction]
-          next unless prediction
-
-          {
-            value: prediction[:place_id],
-            label: prediction.dig(:text, :text) || prediction[:place_id]
-          }
-        end
       end
     end
   end

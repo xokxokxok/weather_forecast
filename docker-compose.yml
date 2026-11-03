@@ -15,6 +15,15 @@ services:
       timeout: 5s
       retries: 5
 
+  redis:
+    image: redis:7
+    command: redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   web:
     build:
       context: .
@@ -31,8 +40,11 @@ services:
       DATABASE_USERNAME: app
       DATABASE_PASSWORD: app
       DATABASE_NAME: app_development
+      REDIS_URL: redis://redis:6379/0
     depends_on:
       db:
+        condition: service_healthy
+      redis:
         condition: service_healthy
     stdin_open: true
     tty: true

@@ -1,0 +1,231 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://geocode.googleapis.com/v4/geocode/location?location.latitude=51.4962989&location.longitude=-0.0482742&types=postal_code
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.15.1
+      X-Goog-Api-Key:
+      - "<GOOGLE_PLACE_API_KEY>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 03 Nov 2026 01:17:56 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Server-Timing:
+      - gfet4t7; dur=827
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "results": [
+            {
+              "place": "places/ChIJiaVbdSADdkgRysWGu1AkQLI",
+              "placeId": "ChIJiaVbdSADdkgRysWGu1AkQLI",
+              "location": {
+                "latitude": 51.4953976,
+                "longitude": -0.0469635
+              },
+              "granularity": "APPROXIMATE",
+              "viewport": {
+                "low": {
+                  "latitude": 51.4934294,
+                  "longitude": -0.051060799999999996
+                },
+                "high": {
+                  "latitude": 51.4969786,
+                  "longitude": -0.044320100000000008
+                }
+              },
+              "bounds": {
+                "low": {
+                  "latitude": 51.4934294,
+                  "longitude": -0.051060799999999996
+                },
+                "high": {
+                  "latitude": 51.4969786,
+                  "longitude": -0.044320100000000008
+                }
+              },
+              "formattedAddress": "London SE16 7LL, UK",
+              "addressComponents": [
+                {
+                  "longText": "SE16 7LL",
+                  "shortText": "SE16 7LL",
+                  "types": [
+                    "postal_code"
+                  ]
+                },
+                {
+                  "longText": "London",
+                  "shortText": "London",
+                  "types": [
+                    "postal_town"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "Greater London",
+                  "shortText": "Greater London",
+                  "types": [
+                    "administrative_area_level_2",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "England",
+                  "shortText": "England",
+                  "types": [
+                    "administrative_area_level_1",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "United Kingdom",
+                  "shortText": "GB",
+                  "types": [
+                    "country",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                }
+              ],
+              "types": [
+                "postal_code"
+              ]
+            },
+            {
+              "place": "places/ChIJc-zOlcICdkgRmRxSFDg8RNc",
+              "placeId": "ChIJc-zOlcICdkgRmRxSFDg8RNc",
+              "location": {
+                "latitude": 51.4966022,
+                "longitude": -0.0498457
+              },
+              "granularity": "APPROXIMATE",
+              "viewport": {
+                "low": {
+                  "latitude": 51.483403499999994,
+                  "longitude": -0.082934100000000011
+                },
+                "high": {
+                  "latitude": 51.5080586,
+                  "longitude": -0.0307635
+                }
+              },
+              "bounds": {
+                "low": {
+                  "latitude": 51.483403499999994,
+                  "longitude": -0.082934100000000011
+                },
+                "high": {
+                  "latitude": 51.5080586,
+                  "longitude": -0.0307635
+                }
+              },
+              "formattedAddress": "London SE16, UK",
+              "addressComponents": [
+                {
+                  "longText": "SE16",
+                  "shortText": "SE16",
+                  "types": [
+                    "postal_code",
+                    "postal_code_prefix"
+                  ]
+                },
+                {
+                  "longText": "London",
+                  "shortText": "London",
+                  "types": [
+                    "postal_town"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "Greater London",
+                  "shortText": "Greater London",
+                  "types": [
+                    "administrative_area_level_2",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "England",
+                  "shortText": "England",
+                  "types": [
+                    "administrative_area_level_1",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                },
+                {
+                  "longText": "United Kingdom",
+                  "shortText": "GB",
+                  "types": [
+                    "country",
+                    "political"
+                  ],
+                  "languageCode": "en"
+                }
+              ],
+              "postalCodeLocalities": [
+                {
+                  "text": "Bermondsey",
+                  "languageCode": "en"
+                },
+                {
+                  "text": "London",
+                  "languageCode": "en"
+                },
+                {
+                  "text": "Rotherhithe",
+                  "languageCode": "en"
+                },
+                {
+                  "text": "Surrey Quays",
+                  "languageCode": "en"
+                }
+              ],
+              "types": [
+                "postal_code",
+                "postal_code_prefix"
+              ]
+            }
+          ],
+          "plusCode": {
+            "globalCode": "9C3XFXW2+GM",
+            "compoundCode": "FXW2+GM London, UK"
+          }
+        }
+  recorded_at: Tue, 03 Nov 2026 01:17:56 GMT
+recorded_with: VCR 6.4.1

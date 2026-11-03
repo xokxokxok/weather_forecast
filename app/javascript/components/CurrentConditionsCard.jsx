@@ -7,6 +7,7 @@ import {
   DashboardOutlined
 } from "@ant-design/icons"
 import { formatTemperature, weatherIconUri } from "../utils/weather"
+import CachedTag from "./CachedTag"
 
 function StatTile({ icon, label, value }) {
   return (
@@ -18,21 +19,24 @@ function StatTile({ icon, label, value }) {
 }
 
 export default function CurrentConditionsCard({ conditions }) {
-  const description = conditions.weather_condition?.description?.text
+  const description = conditions.description
   const temperature = formatTemperature(conditions.temperature)
   const feelsLike = formatTemperature(conditions.feels_like_temperature)
-  const windSpeed = conditions.wind?.speed
+  const windSpeed = conditions.wind_speed
   const humidity = conditions.relative_humidity
-  const iconSrc = weatherIconUri(conditions.weather_condition)
+  const iconSrc = weatherIconUri(conditions.icon_base_uri)
 
   return (
     <Card
       className="surface-card"
       title={
-        <Typography.Text strong style={{ fontSize: 16 }}>
-          <ThunderboltOutlined style={{ marginRight: 8, color: "#0b6bcb" }} />
-          Current Conditions
-        </Typography.Text>
+        <div className="card-title">
+          <Typography.Text strong style={{ fontSize: 16 }}>
+            <ThunderboltOutlined style={{ marginRight: 8, color: "#0b6bcb" }} />
+            Current Conditions
+          </Typography.Text>
+          <CachedTag cached={conditions.cached} />
+        </div>
       }
     >
       <Row gutter={[24, 24]} align="middle">

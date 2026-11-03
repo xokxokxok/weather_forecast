@@ -1,0 +1,219 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://places.googleapis.com/v1/places:autocomplete
+    body:
+      encoding: UTF-8
+      string: '{"input":"90210","sessionToken":"spec-session-token"}'
+    headers:
+      User-Agent:
+      - Faraday v2.15.1
+      X-Goog-Api-Key:
+      - "<GOOGLE_PLACE_API_KEY>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Vary:
+      - "*"
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 03 Nov 2026 01:56:38 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Server-Timing:
+      - gfet4t7; dur=748
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "suggestions": [
+            {
+              "placePrediction": {
+                "place": "places/ChIJ7xfS-zW8woARXNkAJzX5Hs8",
+                "placeId": "ChIJ7xfS-zW8woARXNkAJzX5Hs8",
+                "text": {
+                  "text": "Beverly Hills, CA 90210, USA",
+                  "matches": [
+                    {
+                      "startOffset": 18,
+                      "endOffset": 23
+                    }
+                  ]
+                },
+                "structuredFormat": {
+                  "mainText": {
+                    "text": "90210",
+                    "matches": [
+                      {
+                        "endOffset": 5
+                      }
+                    ]
+                  },
+                  "secondaryText": {
+                    "text": "Beverly Hills, CA, USA"
+                  }
+                },
+                "types": [
+                  "geocode",
+                  "postal_code"
+                ]
+              }
+            },
+            {
+              "placePrediction": {
+                "place": "places/ChIJ2cvgd-_JlzMRCIQhA0FUtMU",
+                "placeId": "ChIJ2cvgd-_JlzMRCIQhA0FUtMU",
+                "text": {
+                  "text": "90210 Beauty Lab, San Andres Street, Malate, Manila, Metro Manila, Philippines",
+                  "matches": [
+                    {
+                      "endOffset": 5
+                    }
+                  ]
+                },
+                "structuredFormat": {
+                  "mainText": {
+                    "text": "90210 Beauty Lab",
+                    "matches": [
+                      {
+                        "endOffset": 5
+                      }
+                    ]
+                  },
+                  "secondaryText": {
+                    "text": "San Andres Street, Malate, Manila, Metro Manila, Philippines"
+                  }
+                },
+                "types": [
+                  "spa",
+                  "point_of_interest",
+                  "beauty_salon",
+                  "establishment",
+                  "hair_care",
+                  "wellness_center",
+                  "health",
+                  "hair_salon",
+                  "service",
+                  "massage_spa",
+                  "nail_salon",
+                  "massage"
+                ]
+              }
+            },
+            {
+              "placePrediction": {
+                "place": "places/ChIJvX3naLHDYpYRh_ky1u0Az1k",
+                "placeId": "ChIJvX3naLHDYpYRh_ky1u0Az1k",
+                "text": {
+                  "text": "9021056 Pudahuel, Chile",
+                  "matches": [
+                    {
+                      "endOffset": 5
+                    }
+                  ]
+                },
+                "structuredFormat": {
+                  "mainText": {
+                    "text": "9021056",
+                    "matches": [
+                      {
+                        "endOffset": 5
+                      }
+                    ]
+                  },
+                  "secondaryText": {
+                    "text": "Pudahuel, Chile"
+                  }
+                },
+                "types": [
+                  "geocode",
+                  "postal_code"
+                ]
+              }
+            },
+            {
+              "placePrediction": {
+                "place": "places/ChIJxcho_ZDO0YURDqyfOnWypH0",
+                "placeId": "ChIJxcho_ZDO0YURDqyfOnWypH0",
+                "text": {
+                  "text": "90210 Tlaxcala, Mexico",
+                  "matches": [
+                    {
+                      "endOffset": 5
+                    }
+                  ]
+                },
+                "structuredFormat": {
+                  "mainText": {
+                    "text": "90210",
+                    "matches": [
+                      {
+                        "endOffset": 5
+                      }
+                    ]
+                  },
+                  "secondaryText": {
+                    "text": "Tlaxcala, Mexico"
+                  }
+                },
+                "types": [
+                  "geocode",
+                  "postal_code"
+                ]
+              }
+            },
+            {
+              "placePrediction": {
+                "place": "places/ChIJXY6gibDDYpYR6zychwchfOE",
+                "placeId": "ChIJXY6gibDDYpYR6zychwchfOE",
+                "text": {
+                  "text": "9021094 Santiago, Pudahuel, Chile",
+                  "matches": [
+                    {
+                      "endOffset": 5
+                    }
+                  ]
+                },
+                "structuredFormat": {
+                  "mainText": {
+                    "text": "9021094",
+                    "matches": [
+                      {
+                        "endOffset": 5
+                      }
+                    ]
+                  },
+                  "secondaryText": {
+                    "text": "Santiago, Pudahuel, Chile"
+                  }
+                },
+                "types": [
+                  "postal_code",
+                  "geocode"
+                ]
+              }
+            }
+          ]
+        }
+  recorded_at: Tue, 03 Nov 2026 01:56:38 GMT
+recorded_with: VCR 6.4.1

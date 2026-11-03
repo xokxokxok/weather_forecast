@@ -70,6 +70,21 @@ body {
   padding-inline: 12px !important;
 }
 
+.search-row {
+  display: flex;
+  gap: 12px;
+}
+
+.search-row .search-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-row .search-button {
+  height: 48px;
+  border-radius: 12px;
+}
+
 .loading-panel {
   margin-top: 32px;
   padding: 48px 24px;
@@ -143,4 +158,28 @@ body {
 
 .results-grid .full-width {
   grid-column: 1 / -1;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-title .cached-tag {
+  margin-inline-end: 0;
+  font-weight: normal;
+}
+
+/* Types tags wrap to the next line instead of overflowing the card */
+.place-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-width: 0;
+}
+
+.place-types .ant-tag {
+  margin-inline-end: 0;
 }
